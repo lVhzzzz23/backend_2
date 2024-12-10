@@ -1,0 +1,11 @@
+Flask
+Flask-Cors
+opencv-python
+numpy
+pillow
+pymongo
+requests
+cloudinary
+Flask-Mail
+face-recognition
+bson

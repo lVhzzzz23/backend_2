@@ -901,8 +901,8 @@ def get_statistics():
 def get_statistics_by_conference(conferenceId):
     try:
         pipeline = [
-            {"$match": {"conferenceId": conferenceId, "isRegistered": True}},  # Lọc theo conferenceId và isRegistered=True
-            {"$group": {"_id": "$conferenceId", "userCount": {"$sum": 1}}}  # Đếm số người đã đăng ký trong conferenceId
+            {"$match": {"conferenceId": conferenceId, "isRegistered": True}},  
+            {"$group": {"_id": "$conferenceId", "userCount": {"$sum": 1}}} 
         ]
         results = list(users_collection.aggregate(pipeline))        
         if results:
@@ -912,9 +912,6 @@ def get_statistics_by_conference(conferenceId):
             return jsonify({"message": "Không tìm thấy dữ liệu cho conferenceId này."}), 404
     except Exception as e:
         return jsonify({"message": "Đã xảy ra lỗi!", "error": str(e)}), 500
-
-
-
 @app.route('/input', methods=['POST'])
 def input():
     try:
