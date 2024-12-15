@@ -9,3 +9,4 @@ cloudinary
 Flask-Mail
 face-recognition
 bson
+dlib==19.24.0
